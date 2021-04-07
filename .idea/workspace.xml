@@ -3,9 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="4ba4ce09-7020-48a0-a0f2-1d1a7c89f776" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/zhiyan-html.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/zhiyan-html.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/files/jweixin-1.0.0(1).js" beforeDir="false" afterPath="$PROJECT_DIR$/files/jweixin-1.0.0(1).js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/files/jweixin-1.0.0.js" beforeDir="false" afterPath="$PROJECT_DIR$/files/jweixin-1.0.0.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/files/reset.min.css" beforeDir="false" afterPath="$PROJECT_DIR$/files/reset.min.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/zhiyan.htm" beforeDir="false" afterPath="$PROJECT_DIR$/zhiyan.htm" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -19,9 +17,39 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/zhiyan.htm">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="314">
-              <caret line="171" selection-start-line="171" selection-end-line="171" />
+            <state relative-caret-position="74">
+              <caret line="43" column="36" lean-forward="true" selection-start-line="43" selection-start-column="36" selection-end-line="43" selection-end-column="36" />
+              <folding>
+                <element signature="n#style#0;n#div#1;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#div#1;n#div#1;n#body#0;n#html#0;n#!!top" />
+                <element signature="n#style#0;n#span#0;n#div#1;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#span#1;n#div#1;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#span#4;n#div#1;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#span#6;n#div#1;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+              </folding>
             </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/static/1.jpg">
+          <provider selected="true" editor-type-id="images" />
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/read.me">
+          <provider selected="true" editor-type-id="text-editor" />
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/files/max640_rem.js">
+          <provider selected="true" editor-type-id="text-editor" />
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/files/reset.min.css">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-37" />
           </provider>
         </entry>
       </file>
@@ -38,7 +66,7 @@
         <entry file="file://$PROJECT_DIR$/files/jweixin-1.0.0.js">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="-7116">
-              <caret line="7" column="22" lean-forward="true" selection-start-line="7" selection-start-column="22" selection-end-line="7" selection-end-column="22" />
+              <caret line="7" column="22" selection-start-line="7" selection-start-column="22" selection-end-line="7" selection-end-column="22" />
             </state>
           </provider>
         </entry>
@@ -61,6 +89,7 @@
       <list>
         <option value="$PROJECT_DIR$/files/jweixin-1.0.0.js" />
         <option value="$PROJECT_DIR$/files/jweixin-1.0.0(1).js" />
+        <option value="$PROJECT_DIR$/files/reset.min.css" />
         <option value="$PROJECT_DIR$/zhiyan.htm" />
       </list>
     </option>
@@ -84,6 +113,11 @@
               <item name="zhiyan-html" type="b2602c69:ProjectViewProjectNode" />
               <item name="zhiyan-html" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="zhiyan-html" type="b2602c69:ProjectViewProjectNode" />
+              <item name="zhiyan-html" type="462c0819:PsiDirectoryNode" />
+              <item name="static" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
@@ -93,7 +127,7 @@
   <component name="PropertiesComponent">
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/static" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -103,6 +137,14 @@
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="settings.editor.selected.configurable" value="editor.preferences.gutterIcons" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/static" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/static" />
+    </key>
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -126,12 +168,12 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1617805706448</updated>
-      <workItem from="1617805707664" duration="813000" />
+      <workItem from="1617805707664" duration="1696000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="813000" />
+    <option name="totallyTimeSpent" value="1696000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1440" height="827" extended-state="6" />
@@ -167,7 +209,7 @@
     <entry file="file://$PROJECT_DIR$/files/jweixin-1.0.0.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-7116">
-          <caret line="7" column="22" lean-forward="true" selection-start-line="7" selection-start-column="22" selection-end-line="7" selection-end-column="22" />
+          <caret line="7" column="22" selection-start-line="7" selection-start-column="22" selection-end-line="7" selection-end-column="22" />
         </state>
       </provider>
     </entry>
@@ -181,10 +223,41 @@
     <entry file="file://$PROJECT_DIR$/files/2(8).png">
       <provider selected="true" editor-type-id="images" />
     </entry>
+    <entry file="file://$PROJECT_DIR$/files/reset.min.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-37" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/files/max640_rem.js">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/read.me">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/static/1.jpg">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/files/1_1.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/files/1_2.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/files/2_1.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
     <entry file="file://$PROJECT_DIR$/zhiyan.htm">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="314">
-          <caret line="171" selection-start-line="171" selection-end-line="171" />
+        <state relative-caret-position="74">
+          <caret line="43" column="36" lean-forward="true" selection-start-line="43" selection-start-column="36" selection-end-line="43" selection-end-column="36" />
+          <folding>
+            <element signature="n#style#0;n#div#1;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#div#1;n#div#1;n#body#0;n#html#0;n#!!top" />
+            <element signature="n#style#0;n#span#0;n#div#1;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#span#1;n#div#1;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#span#4;n#div#1;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#span#6;n#div#1;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
