@@ -20,7 +20,7 @@
     <link rel="stylesheet" href="files/animate.min.css">
     <script type="text/javascript" src="files/jquery.min.js"></script>
     <script src="files/jweixin-1.0.0.js"></script>
-    <script src="files/jweixin-1.0.0(1).js"></script>
+    <!-- <script src="files/jweixin-1.0.0(1).js"></script> -->
 </head>
 <body style="margin: 0;padding: 0;">
 <div id="loadingBar" class="load-warp" style="opacity: 0; display: none;">
@@ -283,242 +283,244 @@
 <script type="text/javascript" src="files/swiper.min.js"></script>
 <script type="text/javascript" src="files/swiper.animate.min.js"></script>
 <script type="text/javascript">
-    var widthNow = null;
-    document.addEventListener('DOMContentLoaded', function (event) {
-        //DOM加载完毕后执行
-        Inter1 = setInterval('addBar()', 50);
-    });
-    window.addEventListener('load', function (event) {
-        //外部资源加载完毕后执行
-        finishBar();
-    });
+    $(function(){
+        var widthNow = null,Inter1=null;
+        document.addEventListener('DOMContentLoaded', function (event) {
+            //DOM加载完毕后执行
+            Inter1 = setInterval('addBar()', 50);
+        });
+        window.addEventListener('load', function (event) {
+            //外部资源加载完毕后执行
+            finishBar();
+        });
 
-    //启动定时器
-    function addBar() {
-        if (widthNow == 99) {
-            return false;
+        //启动定时器
+        function addBar() {
+            if (widthNow == 99) {
+                return false;
+            }
+            widthNow++;
+            $('#loadingBar .v-warp .v-icon span').width(widthNow + '%');
         }
-        widthNow++;
-        $('#loadingBar .v-warp .v-icon span').width(widthNow + '%');
-    }
 
-    //取消定时器
-    function finishBar() {
-        clearInterval(Inter1);
-        $('#loadingBar .v-warp .v-icon span').width(100 + '%');
-        setTimeout(function () {
-            $('#loadingBar .v-warp .v-text').text('加载完成!')
+        //取消定时器
+        function finishBar() {
+            clearInterval(Inter1);
+            $('#loadingBar .v-warp .v-icon span').width(100 + '%');
             setTimeout(function () {
-                $('#loadingBar').animate({"opacity": "0"}, 200).hide(100);
-                initSwiper()
+                $('#loadingBar .v-warp .v-text').text('加载完成!')
+                setTimeout(function () {
+                    $('#loadingBar').animate({"opacity": "0"}, 200).hide(100);
+                    initSwiper()
+                }, 500)
             }, 500)
-        }, 500)
-    }
+        }
 
-    var mySwiper
+        var mySwiper
 
-    function initSwiper() {
-        mySwiper = new Swiper('.swiper-container', {
-            //initialSlide :8,
-            direction: 'vertical',
-            // effect : 'fade',
-            // effect: 'coverflow',
-            effect: 'false',
-            fadeEffect: {
-                crossFade: true,
-            },
-            zoom: true, //开启缩放功能
-            pagination: {
-                el: '.swiper-pagination',
-                dynamicBullets: true,
-                dynamicMainBullets: 2
-            },
-            mousewheelControl: true,
-            updateOnImagesReady: true, //图像（img标签）加载完成后Swiper会重新初始化
-            on: {
-                imagesReady: function () {
-                    console.log('图片加载完成了!');
+        function initSwiper() {
+            mySwiper = new Swiper('.swiper-container', {
+                //initialSlide :8,
+                direction: 'vertical',
+                // effect : 'fade',
+                // effect: 'coverflow',
+                effect: 'false',
+                fadeEffect: {
+                    crossFade: true,
                 },
-                init: function () {
-                    swiperAnimateCache(this);
-                    swiperAnimate(this);
-                    switch (this.activeIndex) {
-                        case 0:
-                            setTimeout(function () {
+                zoom: true, //开启缩放功能
+                pagination: {
+                    el: '.swiper-pagination',
+                    dynamicBullets: true,
+                    dynamicMainBullets: 2
+                },
+                mousewheelControl: true,
+                updateOnImagesReady: true, //图像（img标签）加载完成后Swiper会重新初始化
+                on: {
+                    imagesReady: function () {
+                        console.log('图片加载完成了!');
+                    },
+                    init: function () {
+                        swiperAnimateCache(this);
+                        swiperAnimate(this);
+                        switch (this.activeIndex) {
+                            case 0:
+                                setTimeout(function () {
+                                    $(".slide-1-2").css({
+                                        animation: 'rubberBand 2s ease-out 0s 1'
+                                    })
+                                }, 800);
+                                break;
+                        }
+                    },
+                    slideChangeTransitionStart: function () {
+                        switch (this.activeIndex) {
+                            case 0:
+                                console.log("start" + 0)
+                                $('.salid-2').removeClass('ani-fns')
+                                break;
+                            case 1:
+                                console.log("start" + 1)
                                 $(".slide-1-2").css({
                                     animation: 'rubberBand 2s ease-out 0s 1'
                                 })
-                            }, 800);
-                            break;
+                                $('.salid-2').addClass('ani-fns')
+                                break;
+                            case 2:
+                                console.log("start" + 2)
+                                $('.salid-2').removeClass('ani-fns')
+                                break;
+                            case 3:
+                                console.log("start" + 3)
+                                break;
+                        }
+                    },
+                    slideChangeTransitionEnd: function () {
+                        swiperAnimate(this);
                     }
-                },
-                slideChangeTransitionStart: function () {
-                    switch (this.activeIndex) {
-                        case 0:
-                            console.log("start" + 0)
-                            $('.salid-2').removeClass('ani-fns')
-                            break;
-                        case 1:
-                            console.log("start" + 1)
-                            $(".slide-1-2").css({
-                                animation: 'rubberBand 2s ease-out 0s 1'
-                            })
-                            $('.salid-2').addClass('ani-fns')
-                            break;
-                        case 2:
-                            console.log("start" + 2)
-                            $('.salid-2').removeClass('ani-fns')
-                            break;
-                        case 3:
-                            console.log("start" + 3)
-                            break;
-                    }
-                },
-                slideChangeTransitionEnd: function () {
-                    swiperAnimate(this);
                 }
+            })
+        }
+
+        /* function autoPlay() {
+            // 自动播放音乐效果，解决浏览器或者APP自动播放问题 
+            function musicInBrowserHandler() {
+                audioToggle(true);
+                document.body.removeEventListener('touchstart', musicInBrowserHandler);
             }
-        })
-    }
 
-    // function autoPlay() {
-    //     /* 自动播放音乐效果，解决浏览器或者APP自动播放问题 */
-    //     function musicInBrowserHandler() {
-    //         audioToggle(true);
-    //         document.body.removeEventListener('touchstart', musicInBrowserHandler);
-    //     }
+            document.body.addEventListener('touchstart', musicInBrowserHandler);
 
-    //     document.body.addEventListener('touchstart', musicInBrowserHandler);
-
-    //     /* 自动播放音乐效果，解决微信自动播放问题 */
-    //     function musicInWeixinHandler() {
-    //         audioToggle(true);
-    //         document.addEventListener('WeixinJSBridgeReady', function () {
-    //             audioToggle(true);
-    //         }, false);
-    //         document.addEventListener('YixinJSBridgeReady', function () {
-    //             audioToggle(true);
-    //         }, false);
-    //         document.removeEventListener('DOMContentLoaded', musicInWeixinHandler);
-    //     }
-
-    //     document.addEventListener('DOMContentLoaded', musicInWeixinHandler);
-    // }
-
-    // autoPlay();
-
-    // ====================================================
-    // function audioToggle(isPlay) {
-    //     var playMusic = document.getElementById('music');
-    //     var audio = document.getElementById('audio');
-    //     if (typeof (isPlay) == 'undefined') {
-    //         isPlay = !!audio.paused;
-    //     }
-    //     var space = String.fromCharCode(32); // 空格
-    //     var playBtnClass = space + (playMusic.getAttribute('class') || (isPlay ? 'play' : 'pause')) + space;
-    //     if (isPlay) {
-    //         playBtnClass = playBtnClass.replace(space + 'pause' + space, space + 'play' + space);
-    //         audio.play();
-    //         $(".music").css("animation", "move 2s infinite linear").attr("src", "images/musicBtn.png");
-    //     } else {
-    //         playBtnClass = playBtnClass.replace(space + 'play' + space, space + 'pause' + space);
-    //         audio.pause();
-    //         $(".music").css("animation", "_move").attr("src", "images/musicBtnOff.png");
-    //     }
-    //     playMusic.className = playBtnClass.replace(/(^\s*)|(\s*$)/g, '');
-    // }
-
-    // document.getElementById('music_warp').onclick = function () {
-    //     audioToggle();
-    // }
-
-    //转发封面
-    var thisurl = location.href.split('#')[0];
-    
-    //测试：
-    thisurl='http://8.140.185.137/';
-
-    //console.log(thisurl);
-    $.ajax({
-        type: "post",
-        url: "https://nnwx.ythuayi.com/index.php?g=Wap&m=Test&a=configure",
-        dataType: "json",
-        data: {
-            'url': thisurl
-        },
-        success: function (msg) {
-
-            //测试：
-            msg={
-                "appId": "wx8e13f9f0b4743858",
-                "url": "http://8.140.185.137/",
-                "nonceStr": "zGK8kjwpi0PMYCtw",
-                "timestamp": 1617893700,
-                "jsapi_ticket": "sM4AOVdWfPE4DxkXGEs8VAPtwLaSaNA2Mo6R9BqeD78VrfUH8T-07i0Ouk9iG4eXY058XHDW45wdF9IKespi1w",
-                "signature": "02e0d3daf3b292f71c6de55a22d19fe760a7c100"
-            };
-
-            getconfig(msg);
-        },
-    });
-
-    function getconfig(msg) {
-        var appId = msg.appId;
-        var timestamp = msg.timestamp;
-        var nonceStr = msg.nonceStr;
-        var signature = msg.signature;
-
-        wx.config({
-            debug: false, // 开启调试模式,调用的所有api的返回值会在客户端alert出来，若要查看传入的参数，可以在pc端打开，参数信息会通过log打出，仅在pc端时才会打印。
-            appId: appId, // 必填，公众号的唯一标识
-            timestamp: timestamp, // 必填，生成签名的时间戳
-            nonceStr: nonceStr, // 必填，生成签名的随机串
-            signature: signature,// 必填，签名，见附录1
-            jsApiList: [
-                'onMenuShareTimeline',
-                'onMenuShareAppMessage',
-                'previewImage',
-                'hideMenuItems',
-                'showMenuItems',
-                'hideAllNonBaseMenuItem',
-                'showAllNonBaseMenuItem'] // 必填，需要使用的JS接口列表，所有JS接口列表见附录2
-        });
-    }
-
-    wx.ready(function () {
-        //朋友圈
-        wx.onMenuShareTimeline({
-            title: '知颜扩展升级，诚聘精英！', // 分享标题
-            link: thisurl, // 分享链接
-            imgUrl: 'https://4g.ythuayi.com/huayizp/images/fm.png',
-            success: function (res) {
-                //alert('已分享');
-            },
-            cancel: function (res) {
-                //alert('已取消');
-            },
-            fail: function (res) {
-                //alert(JSON.stringify(res));
+            // 自动播放音乐效果，解决微信自动播放问题 
+            function musicInWeixinHandler() {
+                audioToggle(true);
+                document.addEventListener('WeixinJSBridgeReady', function () {
+                    audioToggle(true);
+                }, false);
+                document.addEventListener('YixinJSBridgeReady', function () {
+                    audioToggle(true);
+                }, false);
+                document.removeEventListener('DOMContentLoaded', musicInWeixinHandler);
             }
-        });
-        //朋友
-        wx.onMenuShareAppMessage({
-            title: '知颜扩展升级，诚聘精英！', // 分享标题
-            desc: '知颜整形，高薪诚聘医美人才，行业竞争力薪酬等你来！', // 分享描述
-            link: thisurl, // 分享链接
-            imgUrl: 'https://4g.ythuayi.com/huayizp/images/fm.png', // 分享图标
-            type: '', // 分享类型,music、video或link，不填默认为link
-            dataUrl: '', // 如果type是music或video，则要提供数据链接，默认为空
-            success: function () {
-                // 用户确认分享后执行的回调函数
-                //alert("分享");
-            },
-            cancel: function () {
-                // 用户取消分享后执行的回调函数
-                //alert("取消分享");
+
+            document.addEventListener('DOMContentLoaded', musicInWeixinHandler);
+        }
+
+        autoPlay();
+
+        //====================================================
+        function audioToggle(isPlay) {
+            var playMusic = document.getElementById('music');
+            var audio = document.getElementById('audio');
+            if (typeof (isPlay) == 'undefined') {
+                isPlay = !!audio.paused;
             }
+            var space = String.fromCharCode(32); // 空格
+            var playBtnClass = space + (playMusic.getAttribute('class') || (isPlay ? 'play' : 'pause')) + space;
+            if (isPlay) {
+                playBtnClass = playBtnClass.replace(space + 'pause' + space, space + 'play' + space);
+                audio.play();
+                $(".music").css("animation", "move 2s infinite linear").attr("src", "images/musicBtn.png");
+            } else {
+                playBtnClass = playBtnClass.replace(space + 'play' + space, space + 'pause' + space);
+                audio.pause();
+                $(".music").css("animation", "_move").attr("src", "images/musicBtnOff.png");
+            }
+            playMusic.className = playBtnClass.replace(/(^\s*)|(\s*$)/g, '');
+        }
+
+        document.getElementById('music_warp').onclick = function () {
+            audioToggle();
+        } */
+
+        //转发封面
+        var thisurl = location.href.split('#')[0];
+        
+        //测试：
+        //thisurl='http://8.140.185.137/';
+
+        //console.log(thisurl);
+        $.ajax({
+            type: "post",
+            url: "https://nnwx.ythuayi.com/index.php?g=Wap&m=Test&a=configure",
+            dataType: "json",
+            data: {
+                'url': thisurl
+            },
+            success: function (msg) {
+
+                //测试：
+                /* msg={
+                    "appId": "wx8e13f9f0b4743858",
+                    "url": "http://8.140.185.137/",
+                    "nonceStr": "zGK8kjwpi0PMYCtw",
+                    "timestamp": 1617893700,
+                    "jsapi_ticket": "sM4AOVdWfPE4DxkXGEs8VAPtwLaSaNA2Mo6R9BqeD78VrfUH8T-07i0Ouk9iG4eXY058XHDW45wdF9IKespi1w",
+                    "signature": "02e0d3daf3b292f71c6de55a22d19fe760a7c100"
+                }; */
+
+                getconfig(msg);
+            },
         });
-    });
+
+        function getconfig(msg) {
+            var appId = msg.appId;
+            var timestamp = msg.timestamp;
+            var nonceStr = msg.nonceStr;
+            var signature = msg.signature;
+
+            wx.config({
+                debug: false, // 开启调试模式,调用的所有api的返回值会在客户端alert出来，若要查看传入的参数，可以在pc端打开，参数信息会通过log打出，仅在pc端时才会打印。
+                appId: appId, // 必填，公众号的唯一标识
+                timestamp: timestamp, // 必填，生成签名的时间戳
+                nonceStr: nonceStr, // 必填，生成签名的随机串
+                signature: signature,// 必填，签名，见附录1
+                jsApiList: [
+                    'onMenuShareTimeline',
+                    'onMenuShareAppMessage',
+                    'previewImage',
+                    'hideMenuItems',
+                    'showMenuItems',
+                    'hideAllNonBaseMenuItem',
+                    'showAllNonBaseMenuItem'] // 必填，需要使用的JS接口列表，所有JS接口列表见附录2
+            });
+        }
+
+        wx.ready(function () {
+            //朋友圈
+            wx.onMenuShareTimeline({
+                title: '知颜扩展升级，诚聘精英！', // 分享标题
+                link: thisurl, // 分享链接
+                imgUrl: 'https://4g.ythuayi.com/huayizp/images/fm.png',
+                success: function (res) {
+                    //alert('已分享');
+                },
+                cancel: function (res) {
+                    //alert('已取消');
+                },
+                fail: function (res) {
+                    //alert(JSON.stringify(res));
+                }
+            });
+            //朋友
+            wx.onMenuShareAppMessage({
+                title: '知颜扩展升级，诚聘精英！', // 分享标题
+                desc: '知颜整形，高薪诚聘医美人才，行业竞争力薪酬等你来！', // 分享描述
+                link: thisurl, // 分享链接
+                imgUrl: 'https://4g.ythuayi.com/huayizp/images/fm.png', // 分享图标
+                type: '', // 分享类型,music、video或link，不填默认为link
+                dataUrl: '', // 如果type是music或video，则要提供数据链接，默认为空
+                success: function () {
+                    // 用户确认分享后执行的回调函数
+                    //alert("分享");
+                },
+                cancel: function () {
+                    // 用户取消分享后执行的回调函数
+                    //alert("取消分享");
+                }
+            });
+        });
+    })
 </script>
 <script type="text/javascript">
     let phoneReg = /(^1[3|4|5|7|8]\d{9}$)|(^09\d{8}$)/;//手机号正则
