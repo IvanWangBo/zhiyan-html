@@ -171,21 +171,18 @@
                     <div class="info-warp p_abs">
                         <div class="v-p">
                             <div class="v-flex">
-                                <div class="v-item p_res v-mar" style="width: 60%">
+                                <div class="v-item p_res v-mar">
                                     <div class="v-input required p_res"><input id="inputName" type="text"
                                                                                placeholder="姓名">
                                     </div>
-                                </div>
-                                <div class="v-item p_res v-mar" style="width: 40%">
-                                    <div class="v-input"><input id="inputAge" type="text" placeholder="年龄"></div>
                                 </div>
                             </div>
                         </div>
                         <div class="v-p">
                             <div class="v-flex">
                                 <div class="v-item p_res">
-                                    <div class="v-input required p_res"><input id="inputPost" type="text"
-                                                                               placeholder="应聘职位"></div>
+                                    <div class="v-input required p_res"><input id="inputAge" type="text"
+                                                                               placeholder="年龄"></div>
                                 </div>
                             </div>
                         </div>
@@ -200,14 +197,8 @@
                         <div class="v-p">
                             <div class="v-flex">
                                 <div class="v-item p_res">
-                                    <div class="v-input"><input id="inputAddress" type="text" placeholder="联系地址"></div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="v-p">
-                            <div class="v-flex">
-                                <div class="v-textarea p_res">
-                                    <textarea id="textareaEvaluation" rows="10" cols="20" placeholder="个人评价"></textarea>
+                                    <div class="v-input required p_res"><input
+                                                id="inputPicture" type="file" placeholder="上传工牌"></div>
                                 </div>
                             </div>
                         </div>
@@ -531,9 +522,8 @@
     function binding() {
         let name = $.trim($('#inputName').val()),
             age = $.trim($('#inputAge').val()),
-            phone = $.trim($('#inputPhone').val())
-            job_number = $.trim($('#inputPhone').val())
-        ;
+            phone = $.trim($('#inputPhone').val()),
+            jobPicture = $('#inputPicture')[0];
         if (!nameReg.test(name)) {
             alert(" 请输入真实的姓名");
             return false;
@@ -542,19 +532,27 @@
             alert(" 请输入有效的手机号码");
             return false;
         }
+        let data = {
+            "name":name,
+            "age": age,
+            "phone": phone,
+            "job_picture":jobPicture
+        }
+        let fromData = new FormData();
+        $.each(data,function(key,value) {
+            fromData.append(key,value);
+        })
+
         flag = true;
         if (flag) {
-            console.log(age)
             $.ajax({
-                url: "http://localhost:9999/user/data",
+                url: "http://8.140.185.137:9999/user/data",
                 type: 'POST',
                 scriptCharset: 'utf-8',
-                data:{
-                    'name': name,
-                    'age': age,
-                    'phone': phone,
-                    'job_number': job_number,
-                },
+                cache: false,
+                contentType: false,
+                processData: false,
+                data:fromData,
                 success: function (res) {
                     console.log(res)
                     if (res.code != 0) {
