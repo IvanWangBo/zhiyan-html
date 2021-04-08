@@ -519,45 +519,36 @@
     function binding() {
         let name = $.trim($('#inputName').val()),
             age = $.trim($('#inputAge').val()),
-            mobile = $.trim($('#inputPhone').val()),
-            position = $.trim($('#inputPost').val()),
-            address = $.trim($('#inputAddress').val()),
-            evaluation = $.trim($('#textareaEvaluation').val())
+            phone = $.trim($('#inputPhone').val())
+            job_number = $.trim($('#inputPhone').val())
         ;
         if (!nameReg.test(name)) {
             alert(" 请输入真实的姓名");
             return false;
         }
-        if (!phoneReg.test(mobile)) {
+        if (!phoneReg.test(phone)) {
             alert(" 请输入有效的手机号码");
-            return false;
-        }
-        if (!nameReg.test(position)) {
-            alert(" 请输入想要应聘的职位");
             return false;
         }
         flag = true;
         if (flag) {
             console.log(age)
             $.ajax({
-                url: "https://wd.ythuayi.com/webinfo/index.php?s=/Home/Index/zhaopin/",
+                url: "http://localhost:9999/user/data",
                 type: 'POST',
                 scriptCharset: 'utf-8',
-                data: {
+                data:{
                     'name': name,
                     'age': age,
-                    'position': position,
-                    'mobile': mobile,
-                    'address': address,
-                    'evaluation': evaluation,
-                    'company': '知颜'
+                    'phone': phone,
+                    'job_number': job_number,
                 },
                 success: function (res) {
                     console.log(res)
-                    if (res.errcode == 1) {
-                        alert(res.msg);
+                    if (res.code != 0) {
+                        alert(res.message);
                     }
-                    if (res.errcode == -1) {
+                    if (res.code == 0) {
                         $(".hy-receiv").css("display", "block")
                         $(".hy-receiv .b").addClass('bounceIn')
                         $(".hy-receiv .b").animate({opacity: 1}, 100)
@@ -570,7 +561,7 @@
                 }
             })
         } else {
-            alert("请输入用户手机号码或者真实名字、报名职位")
+            alert("请输入用户手机号码或者真实名字!")
         }
     }
 </script>
