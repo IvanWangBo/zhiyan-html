@@ -435,9 +435,8 @@
     //转发封面
     var thisurl = location.href.split('#')[0];
     
-    
     //测试：
-    thisurl='http://8.140.185.137/';
+    thisurl='https://4g.ythuayi.com/huayizp/';
 
     //console.log(thisurl);
     $.ajax({
@@ -448,6 +447,17 @@
             'url': thisurl
         },
         success: function (msg) {
+
+            //测试：
+            msg={
+                "appId": "wx8e13f9f0b4743858",
+                "url": "https://4g.ythuayi.com/huayizp/",
+                "nonceStr": "zGK8kjwpi0PMYCtw",
+                "timestamp": 1617893700,
+                "jsapi_ticket": "sM4AOVdWfPE4DxkXGEs8VAPtwLaSaNA2Mo6R9BqeD78VrfUH8T-07i0Ouk9iG4eXY058XHDW45wdF9IKespi1w",
+                "signature": "02e0d3daf3b292f71c6de55a22d19fe760a7c100"
+            };
+
             getconfig(msg);
         },
     });
