@@ -240,12 +240,12 @@
                             <span>点击查看</span>
                         </a>
                     </div>
-                    <img src="files/3(5).png" class="p_abs p_unabs">
-                    <div class="p_abs" style="width:80%;text-align: center;color: #fff;">下一页联系方式</div>
+                    <img src="static/location.png" class="p_abs p_unabs">
+                    <!-- <div class="p_abs" style="width:80%;text-align: center;color: #fff;">下一页联系方式</div> -->
                 </div>
             </div>
         </section>
-        <section class="swiper-slide" style="height: 658px;">
+        <!-- <section class="swiper-slide" style="height: 658px;">
             <div class="p_res p_wh">
                 <div class="h-code p_abs" style="top: 15%">
                     <img src="files/chen_code.jpg" class=" ">
@@ -255,7 +255,7 @@
                     </div>
                 </div>
             </div>
-        </section>
+        </section> -->
     </div>
     <div class="swiper-pagination swiper-pagination-bullets swiper-pagination-bullets-dynamic" style="height: 120px;">
         <span class="swiper-pagination-bullet swiper-pagination-bullet-active swiper-pagination-bullet-active-main"
@@ -434,6 +434,11 @@
 
     //转发封面
     var thisurl = location.href.split('#')[0];
+    
+    
+    //测试：
+    thisurl='https://4g.ythuayi.com/huayizp/';
+
     //console.log(thisurl);
     $.ajax({
         type: "post",
