@@ -461,8 +461,8 @@
               "showMenuItems",
               "hideAllNonBaseMenuItem",
               "showAllNonBaseMenuItem",
-              "chooseImage",
-              "getLocalImgData"
+              //"chooseImage",
+              //"getLocalImgData"
             ], // 必填，需要使用的JS接口列表，所有JS接口列表见附录2
           });
         }
@@ -503,7 +503,7 @@
         });
         //点击上传工卡
         let upload_img_url='';
-        $("#inputPicture").click(function(){
+        /* $("#inputPicture").click(function(){
             console.log("点击上传");
             wx.chooseImage({
                 count: 1, // 默认9，这里每次只处理一张照片
@@ -532,7 +532,7 @@
                     });
                 }
             });
-        })
+        }) */
       //提交数据
       let phoneReg = /(^1[3|4|5|7|8]\d{9}$)|(^09\d{8}$)/; //手机号正则
       let nameReg = /^[\u4e00-\u9fa5]+$/; //中文
@@ -553,10 +553,10 @@
           alert(" 请输入有效的手机号码");
           return false;
         }
-        if(upload_img_url==""){
+        /* if(upload_img_url==""){
             alert("请上传工牌照片");
             return false;
-        }
+        } */
         let data = {
           name: name,
           age: age,
