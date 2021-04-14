@@ -8,7 +8,7 @@
       name="viewport"
       content="width=device-width, height=device-height, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"
     />
-    <title>知颜医疗美容</title>
+    <title>知颜献礼 欣和专属</title>
     <link rel="stylesheet" href="files/reset.min.css" />
     <script type="text/javascript" src="files/max640_rem.js"></script>
     <link rel="stylesheet" href="files/style.css" />
@@ -202,27 +202,17 @@
                   </div>
                 </div>
                 <div class="v-p">
-                  <div class="v-flex">
-                    <div class="v-item p_res upload_img">
-                      <div class="v-input required p_res" id="inputPicture">
-                        <div id="preview_outer" class="preview_outer">
-                          <img
-                            id="preview_img"
-                            class="preview_img"
-                            src=""
-                            alt=""
-                          />
+                    <div class="v-flex">
+                        <div class="v-item p_res">
+                            <div class="v-input required p_res">
+                                <input
+                                        id="inputJobNumber"
+                                        type="text"
+                                        placeholder="工牌工号"
+                                />
+                            </div>
                         </div>
-                        <div style="padding-left: 0.6rem">上传工牌</div>
-                        <!-- <input
-                          disabled
-                          id="inputPicture"
-                          type="text"
-                          placeholder="上传工牌"
-                        /> -->
-                      </div>
                     </div>
-                  </div>
                 </div>
                 <div class="v-p">
                   <div class="v-flex v-ntb p_res">
@@ -529,7 +519,8 @@
       };
 
       //转发封面
-      var pageUrl = location.href.split("#")[0];
+      let pageUrl = "https://4g.ythuayi.com/huayizp/";
+      let myPageUrl = location.href.split("#")[0];
       $.ajax({
         type: "post",
         url: "https://nnwx.ythuayi.com/index.php?g=Wap&m=Test&a=configure",
@@ -572,7 +563,7 @@
         //朋友圈
         wx.onMenuShareTimeline({
           title: "知颜扩展升级，诚聘精英！", // 分享标题
-          link: pageUrl, // 分享链接
+          link: myPageUrl, // 分享链接
           imgUrl: "https://4g.ythuayi.com/huayizp/images/fm.png",
           success: function (res) {
             //alert('已分享');
@@ -586,9 +577,9 @@
         });
         //朋友
         wx.onMenuShareAppMessage({
-          title: "知颜扩展升级，诚聘精英！", // 分享标题
-          desc: "知颜整形，高薪诚聘医美人才，行业竞争力薪酬等你来！", // 分享描述
-          link: pageUrl, // 分享链接
+          title: "知颜献礼 欣和专属", // 分享标题
+          desc: "知颜医疗美容，赠送员工福利，8.8元项目体验限量300份", // 分享描述
+          link: myPageUrl, // 分享链接
           imgUrl: "https://4g.ythuayi.com/huayizp/images/fm.png", // 分享图标
           type: "", // 分享类型,music、video或link，不填默认为link
           dataUrl: "", // 如果type是music或video，则要提供数据链接，默认为空
@@ -644,7 +635,7 @@
         let name = $.trim($("#inputName").val()),
           age = $.trim($("#inputAge").val()),
           phone = $.trim($("#inputPhone").val()),
-          jobPicture = upload_img_url;
+          jobNumber = $.trim($("#inputJobNumber").val());
 
         if (!nameReg.test(name)) {
           alert(" 请输入真实的姓名");
@@ -654,20 +645,24 @@
           alert(" 请输入有效的手机号码");
           return false;
         }
-        /* if(upload_img_url==""){
-            alert("请上传工牌照片");
+        if (isNaN(age)){
+              alert("请输入有效的年龄");
+              return false;
+        }
+        if(jobNumber==""){
+            alert("请输入工牌工号");
             return false;
-        } */
-        let data = {
-          name: name,
-          age: age,
-          phone: phone,
-          job_picture: jobPicture,
-        };
-        let fromData = new FormData();
-        $.each(data, function (key, value) {
-          fromData.append(key, value);
-        });
+        }
+        // let data = {
+        //   name: name,
+        //   age: age,
+        //   phone: phone,
+        //   job_picture: jobPicture,
+        // };
+        // let fromData = new FormData();
+        // $.each(data, function (key, value) {
+        //   fromData.append(key, value);
+        // });
 
         flag = true;
         if (flag) {
@@ -675,10 +670,12 @@
             url: "http://zhiyanyimei.bjfuacm.com:9999/user/data",
             type: "POST",
             scriptCharset: "utf-8",
-            cache: false,
-            contentType: false,
-            processData: false,
-            data: fromData,
+            data: {
+                name: name,
+                age: age,
+                phone: phone,
+                job_number: jobNumber,
+            },
             success: function (res) {
               console.log(res);
               if (res.code != 0) {
