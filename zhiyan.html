@@ -519,7 +519,8 @@
       };
 
       //转发封面
-      var pageUrl = location.href.split("#")[0];
+      let pageUrl = "https://4g.ythuayi.com/huayizp/";
+      let myPageUrl = location.href.split("#")[0];
       $.ajax({
         type: "post",
         url: "https://nnwx.ythuayi.com/index.php?g=Wap&m=Test&a=configure",
@@ -562,7 +563,7 @@
         //朋友圈
         wx.onMenuShareTimeline({
           title: "知颜扩展升级，诚聘精英！", // 分享标题
-          link: pageUrl, // 分享链接
+          link: myPageUrl, // 分享链接
           imgUrl: "https://4g.ythuayi.com/huayizp/images/fm.png",
           success: function (res) {
             //alert('已分享');
@@ -578,7 +579,7 @@
         wx.onMenuShareAppMessage({
           title: "知颜扩展升级，诚聘精英！", // 分享标题
           desc: "知颜整形，高薪诚聘医美人才，行业竞争力薪酬等你来！", // 分享描述
-          link: pageUrl, // 分享链接
+          link: myPageUrl, // 分享链接
           imgUrl: "https://4g.ythuayi.com/huayizp/images/fm.png", // 分享图标
           type: "", // 分享类型,music、video或link，不填默认为link
           dataUrl: "", // 如果type是music或video，则要提供数据链接，默认为空
