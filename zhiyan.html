@@ -202,27 +202,17 @@
                   </div>
                 </div>
                 <div class="v-p">
-                  <div class="v-flex">
-                    <div class="v-item p_res upload_img">
-                      <div class="v-input required p_res" id="inputPicture">
-                        <div id="preview_outer" class="preview_outer">
-                          <img
-                            id="preview_img"
-                            class="preview_img"
-                            src=""
-                            alt=""
-                          />
+                    <div class="v-flex">
+                        <div class="v-item p_res">
+                            <div class="v-input required p_res">
+                                <input
+                                        id="inputJobNumber"
+                                        type="text"
+                                        placeholder="工牌工号"
+                                />
+                            </div>
                         </div>
-                        <div style="padding-left: 0.6rem">上传工牌</div>
-                        <!-- <input
-                          disabled
-                          id="inputPicture"
-                          type="text"
-                          placeholder="上传工牌"
-                        /> -->
-                      </div>
                     </div>
-                  </div>
                 </div>
                 <div class="v-p">
                   <div class="v-flex v-ntb p_res">
@@ -644,7 +634,7 @@
         let name = $.trim($("#inputName").val()),
           age = $.trim($("#inputAge").val()),
           phone = $.trim($("#inputPhone").val()),
-          jobPicture = upload_img_url;
+          jobNumber = $.trim($("#inputJobNumber").val());
 
         if (!nameReg.test(name)) {
           alert(" 请输入真实的姓名");
@@ -654,20 +644,24 @@
           alert(" 请输入有效的手机号码");
           return false;
         }
-        /* if(upload_img_url==""){
-            alert("请上传工牌照片");
+        if (isNaN(age)){
+              alert("请输入有效的年龄");
+              return false;
+        }
+        if(jobNumber==""){
+            alert("请输入工牌工号");
             return false;
-        } */
-        let data = {
-          name: name,
-          age: age,
-          phone: phone,
-          job_picture: jobPicture,
-        };
-        let fromData = new FormData();
-        $.each(data, function (key, value) {
-          fromData.append(key, value);
-        });
+        }
+        // let data = {
+        //   name: name,
+        //   age: age,
+        //   phone: phone,
+        //   job_picture: jobPicture,
+        // };
+        // let fromData = new FormData();
+        // $.each(data, function (key, value) {
+        //   fromData.append(key, value);
+        // });
 
         flag = true;
         if (flag) {
@@ -675,10 +669,12 @@
             url: "http://zhiyanyimei.bjfuacm.com:9999/user/data",
             type: "POST",
             scriptCharset: "utf-8",
-            cache: false,
-            contentType: false,
-            processData: false,
-            data: fromData,
+            data: {
+                name: name,
+                age: age,
+                phone: phone,
+                job_number: jobNumber,
+            },
             success: function (res) {
               console.log(res);
               if (res.code != 0) {
