@@ -510,7 +510,7 @@
           audio.play();
           $(".music")
             .css("animation", "move 2s infinite linear")
-            .attr("src", "images/musicBtn.png");
+            .attr("src", "static/musicBtn.png");
         } else {
           playBtnClass = playBtnClass.replace(
             space + "play" + space,
@@ -519,7 +519,7 @@
           audio.pause();
           $(".music")
             .css("animation", "_move")
-            .attr("src", "images/musicBtnOff.png");
+            .attr("src", "static/musicBtnOff.png");
         }
         playMusic.className = playBtnClass.replace(/(^\s*)|(\s*$)/g, "");
       }
