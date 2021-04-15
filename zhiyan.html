@@ -522,14 +522,13 @@
       };
 
       //转发封面
-      let pageUrl = "https://4g.ythuayi.com/huayizp/";
       let myPageUrl = location.href.split("#")[0];
       $.ajax({
         type: "post",
-        url: "https://nnwx.ythuayi.com/index.php?g=Wap&m=Test&a=configure",
+        url: "http://zhiyanyimei.bjfuacm.com:9999/getSign",
         dataType: "json",
         data: {
-          url: pageUrl,
+          url: myPageUrl,
         },
         success: function (msg) {
           getConfig(msg);
