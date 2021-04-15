@@ -33,33 +33,36 @@
       <div class="swiper-wrapper" style="transform: translate3d(0px, 0px, 0px)">
         <section
           class="swiper-slide swiper-slide-active"
-          style="padding: 0px !important; height: 658px"
+          style="padding: 0px !important;"
         >
-          <div class="p_res p_wh">
-            <img src="static/1.jpg" class="p_abs" style="top: 0" />
-            <!--<img src="files/2.png" class="p_abs" style="top: 26%">-->
-            <!--<img src="files/4.png" class="p_abs" style="bottom: 4%">-->
-          </div>
+        <img src="static/img1.png" class="p_abs" style="top:0;"/>
+          <!-- <div class="p_res p_wh">
+            <img src="static/img1.png" class="p_abs" style="top: 0" />
+          </div> -->
         </section>
-        <section class="swiper-slide swiper-slide-next" style="height: 658px">
-          <div class="p_res p_wh">
-            <img src="static/2.jpg" class="p_abs" style="top: 0" />
-          </div>
+        <section class="swiper-slide swiper-slide-next">
+          <img src="static/img2.png" class="p_abs" style="top:0;"/>
+          <!-- <div class="p_res p_wh">
+            <img src="static/img2.png" class="p_abs" style="top: 0" />
+          </div> -->
         </section>
-        <section class="swiper-slide swiper-slide-next" style="height: 658px">
-          <div class="p_res p_wh">
-            <img src="static/3.jpg" class="p_abs" style="top: 0" />
-          </div>
+        <section class="swiper-slide swiper-slide-next">
+          <img src="static/img3.png" class="p_abs" style="top:0;"/>
+          <!-- <div class="p_res p_wh">
+            <img src="static/img3.png" class="p_abs" style="top: 0" />
+          </div> -->
         </section>
-        <section class="swiper-slide swiper-slide-next" style="height: 658px">
-          <div class="p_res p_wh">
-            <img src="static/4.jpg" class="p_abs" style="top: 0" />
-          </div>
+        <section class="swiper-slide swiper-slide-next">
+          <img src="static/img4.png" class="p_abs" style="top:0;"/>
+          <!-- <div class="p_res p_wh">
+            <img src="static/img4.png" class="p_abs" style="top: 0" />
+          </div> -->
         </section>
-        <section class="swiper-slide swiper-slide-next" style="height: 658px">
-          <div class="p_res p_wh">
-            <img src="static/5.jpg" class="p_abs" style="top: 0" />
-          </div>
+        <section class="swiper-slide swiper-slide-next">
+          <img src="static/img5.png" class="p_abs" style="top:0;" />
+          <!-- <div class="p_res p_wh">
+            <img src="static/img5.png" class="p_abs" style="top: 0" />
+          </div> -->
         </section>
         <!--        <section class="swiper-slide" style="height: 658px;">-->
         <!--            <div class="p_res p_wh">-->
@@ -165,7 +168,7 @@
         <!--                     swiper-animate-style-cache="top: 36%">-->
         <!--            </div>-->
         <!--        </section>-->
-        <section class="swiper-slide" style="height: 658px">
+        <section class="swiper-slide">
           <div class="p_res p_wh">
             <img src="files/2(7).png" class="p_abs" style="top: 6%" />
             <div id="applyId">
@@ -500,7 +503,7 @@
           audio.play();
           $(".music")
             .css("animation", "move 2s infinite linear")
-            .attr("src", "images/musicBtn.png");
+            .attr("src", "static/musicBtn.png");
         } else {
           playBtnClass = playBtnClass.replace(
             space + "play" + space,
@@ -509,7 +512,7 @@
           audio.pause();
           $(".music")
             .css("animation", "_move")
-            .attr("src", "images/musicBtnOff.png");
+            .attr("src", "static/musicBtnOff.png");
         }
         playMusic.className = playBtnClass.replace(/(^\s*)|(\s*$)/g, "");
       }
