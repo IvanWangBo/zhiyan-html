@@ -878,9 +878,6 @@ img {
 }
 
 @media only screen and (min-width: 413px) and (min-height: 735px) {
-    .swiper-slide {
-        padding: 0 5% !important;
-    }
     .swiper-slide .info-warp {
         padding: 0 5%;
     }
