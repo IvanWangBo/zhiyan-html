@@ -498,18 +498,26 @@ img {
 .info-inp{
     position: absolute;
     left: 25.6vw;
-    bottom: 30.93vw;
-    height: 9.6vw;
+    top: 77vh;
+    height: 5.6vh;
     width: 62.67vw;
     border: none;
     outline: none;
     font-size: 3.73vw;
     color: rgb(24, 24, 24);
-    background: rgb(239, 239, 239);
+    background: transparent;
+}
+
+.safari .info-inp{
+    top: calc(77vh - 61px);
 }
 
 #inputPhone.info-inp{
-    bottom: 18.4vw;
+    top: 84vh;
+}
+
+.safari #inputPhone.info-inp{
+    top: calc(83vh - 61px);
 }
 
 .info-inp::placeholder{
@@ -519,25 +527,34 @@ img {
 
 .submit-btn{
     position: absolute;
-    bottom: 5.33vw;
-    height: 9.07vw;
+    top: 91vh;
+    height: 7.10vh;
     width: 100%;
     border: none;
     outline: none;
     background: transparent;
 }
 
+.safari .submit-btn{
+    top: calc(91vh - 61px);
+}
+
 .address-btn{
     position: absolute;
-    bottom: 58.13vw;
-    height: 9.07vw;
+    top: 62.23vh;
+    height: 7.10vh;
     width: 100%;
+}
+
+.safari .address-btn{
+    top: calc(62.23vh - 61px);
 }
 
 .address-btn a{
     display: inline-block;
     width: 100%;
     height: 100%;
+    background: transparent;
 }
 
 .p_unabs {

@@ -27,7 +27,7 @@
       </div>
     </div>
     <div class="swiper-container swiper-container-vertical">
-      <div class="swiper-wrapper" style="transform: translate3d(0px, 0px, 0px)">
+      <div class="swiper-wrapper" style="transform: translate3d(0px, 0px, 0px);">
         <section
           class="swiper-slide swiper-slide-active"
           style="padding: 0px !important;"
@@ -55,7 +55,7 @@
             <img src="static/4.jpg" class="p_abs" style="top: 0" />
           </div> -->
         </section>
-        <section class="swiper-slide swiper-slide-next">
+        <section class="swiper-slide swiper-slide-next safari-fixed">
           <img src="static/5.jpg" class="p_abs" style="top:0;" />
           <input
             type="text"
@@ -95,7 +95,7 @@
             <img src="static/6.png" class="p_abs" style="top: 0" />
           </div> -->
         </section>
-        <section class="swiper-slide swiper-slide-next">
+        <section class="swiper-slide swiper-slide-next safari-fixed">
           <img src="static/7.jpg" class="p_abs" style="top:0;" />
           <div class="address-btn">
             <a
@@ -275,6 +275,9 @@
     <script type="text/javascript" src="files/swiper.min.js"></script>
     <script type="text/javascript" src="files/swiper.animate.min.js"></script>
     <script type="text/javascript">
+      if(window.navigator.appVersion.includes('Safari')) {
+        $('.safari-fixed').addClass('safari')
+      }
       var widthNow = null,
         Inter1 = null;
       document.addEventListener("DOMContentLoaded", function (event) {
