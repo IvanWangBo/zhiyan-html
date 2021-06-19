@@ -487,7 +487,57 @@ img {
 .p_abs {
     position: absolute;
     width: 100%;
-    object-fit: contain;
+    height: 100%;
+}
+
+.p_auto{
+    position: absolute;
+    width: 100%;
+}
+
+.info-inp{
+    position: absolute;
+    left: 25.6vw;
+    bottom: 30.93vw;
+    height: 9.6vw;
+    width: 62.67vw;
+    border: none;
+    outline: none;
+    font-size: 3.73vw;
+    color: rgb(24, 24, 24);
+    background: rgb(239, 239, 239);
+}
+
+#inputPhone.info-inp{
+    bottom: 18.4vw;
+}
+
+.info-inp::placeholder{
+    font-size: 3.73vw;
+    color: rgb(24, 24, 24);
+}
+
+.submit-btn{
+    position: absolute;
+    bottom: 5.33vw;
+    height: 9.07vw;
+    width: 100%;
+    border: none;
+    outline: none;
+    background: transparent;
+}
+
+.address-btn{
+    position: absolute;
+    bottom: 58.13vw;
+    height: 9.07vw;
+    width: 100%;
+}
+
+.address-btn a{
+    display: inline-block;
+    width: 100%;
+    height: 100%;
 }
 
 .p_unabs {
