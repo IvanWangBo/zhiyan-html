@@ -5,7 +5,7 @@
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     <meta name="robots" content="index,follow" />
     <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
-    <title>免费招募 仅限30名</title>
+    <title>知颜献礼 欣和专属</title>
     <link rel="stylesheet" href="files/reset.min.css" />
     <script type="text/javascript" src="files/max640_rem.js"></script>
     <link rel="stylesheet" href="files/style.css" />
@@ -55,14 +55,8 @@
             <img src="static/4.jpg" class="p_abs" style="top: 0" />
           </div> -->
         </section>
-        <section class="swiper-slide swiper-slide-next">
-          <img src="static/5.jpg" class="p_abs" style="top:0;" />
-          <!-- <div class="p_res p_wh">
-            <img src="static/5.png" class="p_abs" style="top: 0" />
-          </div> -->
-        </section>
         <section class="swiper-slide swiper-slide-next safari-fixed">
-          <img src="static/6.jpg" class="p_abs" style="top:0;" />
+          <img src="static/5.jpg" class="p_abs" style="top:0;" />
           <input
             type="text"
             id="inputName"
@@ -77,18 +71,26 @@
           >
           <button class="submit-btn" onclick="binding()"></button>
           <div class="hy-receiv">
-            <div class="hy-bg"></div>
-            <div class="b">
-              <div id="hy-rce ani"></div>
-              <div>
-                报名成功
-                <br />
-                <span style="color: #666; font-size: 0.4rem; font-weight: 100">loading···</span>
-                <br />
-                即将为您呈现医院地址
-              </div>
+                <div class="hy-bg"></div>
+                <div class="b">
+                    <div id="hy-rce ani"></div>
+                    <div>
+                        报名成功
+                        <br />
+                        <span style="color: #666; font-size: 0.4rem; font-weight: 100"
+                        >loading···</span
+                        >
+                        <br />
+                        即将为您呈现医院地址
+                    </div>
+                </div>
             </div>
-        </div>
+          <!-- <div class="p_res p_wh">
+            <img src="static/5.png" class="p_abs" style="top: 0" />
+          </div> -->
+        </section>
+        <section class="swiper-slide swiper-slide-next">
+          <img src="static/6.jpg" class="p_abs" style="top:0;" />
           <!-- <div class="p_res p_wh">
             <img src="static/6.png" class="p_abs" style="top: 0" />
           </div> -->
@@ -508,7 +510,7 @@
       wx.ready(function () {
         //朋友圈
         wx.onMenuShareTimeline({
-          title: "免费招募 仅限30名", // 分享标题
+          title: "知颜献礼 欣和专属", // 分享标题
           link: myPageUrl, // 分享链接
           imgUrl: "http://zhiyanyimei.bjfuacm.com/static/share.jpeg",
           success: function (res) {
@@ -523,8 +525,8 @@
         });
         //朋友
         wx.onMenuShareAppMessage({
-          title: "免费招募 仅限30名", // 分享标题
-          desc: "知颜奈卓尔美眼案例招募！ 全免费！ 无套路！", // 分享描述
+          title: "知颜献礼 欣和专属", // 分享标题
+          desc: "知颜医疗美容，赠送员工福利，8.8元项目体验限量300份", // 分享描述
           link: myPageUrl, // 分享链接
           imgUrl: "http://zhiyanyimei.bjfuacm.com/static/share.jpeg", // 分享图标
           type: "", // 分享类型,music、video或link，不填默认为link
