@@ -66,14 +66,22 @@
           <input
             type="text"
             id="inputName"
-            placeholder="姓名"
-            class="info-inp"
+            class="info-inp line-1"
+          >
+          <input
+            type="text"
+            id="inputAcademy"
+            class="info-inp line-1"
           >
           <input
             type="text"
             id="inputPhone"
-            placeholder="电话"
-            class="info-inp"
+            class="info-inp line-2"
+          >
+          <input
+            type="text"
+            id="inputVocation"
+            class="info-inp line-2"
           >
           <button class="submit-btn" onclick="binding()"></button>
           <div class="hy-receiv">
@@ -273,9 +281,9 @@
     <script type="text/javascript" src="files/swiper.min.js"></script>
     <script type="text/javascript" src="files/swiper.animate.min.js"></script>
     <script type="text/javascript">
-      if(window.navigator.appVersion.includes('Safari')) {
-        $('.safari-fixed').addClass('safari')
-      }
+      // if(window.navigator.appVersion.includes('Safari')) {
+      //   $('.safari-fixed').addClass('safari')
+      // }
       var widthNow = null,
         Inter1 = null;
       document.addEventListener("DOMContentLoaded", function (event) {
@@ -578,16 +586,23 @@
       /*提交*/
       function binding() {
         let name = $.trim($("#inputName").val()),
-          // age = $.trim($("#inputAge").val()),
-          phone = $.trim($("#inputPhone").val());
-          // jobNumber = $.trim($("#inputJobNumber").val());
-
+          academy = $.trim($("#inputAcademy").val()),
+          phone = $.trim($("#inputPhone").val()),
+          vocation = $.trim($("#inputVocation").val());
         if (!nameReg.test(name)) {
           alert("请输入真实的姓名");
           return false;
         }
         if (!phoneReg.test(phone)) {
           alert("请输入有效的手机号码");
+          return false;
+        }
+        if(!academy || academy.length > 150) {
+          alert("毕业院校不能为空且不能超过150个字符");
+          return false;
+        }
+        if(!vocation || vocation.length > 150) {
+          alert("求职意向不能为空且不能超过150个字符");
           return false;
         }
         // if (isNaN(age)){
@@ -611,9 +626,11 @@
           scriptCharset: "utf-8",
           data: {
             name: name,
-            // age: age,
             phone: phone,
-            // job_number: jobNumber,
+            extra: JSON.stringify({
+              academy: academy,
+              vocation: vocation
+            })
           },
           success: function (res) {
             console.log(res);

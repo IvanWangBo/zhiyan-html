@@ -497,38 +497,51 @@ img {
 
 .info-inp{
     position: absolute;
-    left: 25.6vw;
-    top: 77vh;
-    height: 5.6vh;
-    width: 62.67vw;
+    height: 3.45vh;
+    width: 28vw;
     border: none;
     outline: none;
-    font-size: 3.73vw;
+    font-size: 3.2vw;
     color: rgb(24, 24, 24);
     background: transparent;
 }
 
-.safari .info-inp{
-    top: calc(77vh - 61px);
+.info-inp.line-1{
+    top: 79.01vh;
 }
 
+.info-inp.line-2{
+    top: 85.61vh;
+}
+
+#inputName.info-inp,
 #inputPhone.info-inp{
-    top: 84vh;
+    left: 18.67vw;
 }
 
-.safari #inputPhone.info-inp{
-    top: calc(83vh - 61px);
+#inputAcademy.info-inp,
+#inputVocation.info-inp{
+    width: 22.13vw;
+    left: 72vw;
+}
+
+.safari .info-inp.line-1{
+    top: calc(79.01vh - 61px);
+}
+
+.safari .info-inp.line-2{
+    top: calc(85vh - 61px);
 }
 
 .info-inp::placeholder{
-    font-size: 3.73vw;
+    font-size: 3.2vw;
     color: rgb(24, 24, 24);
 }
 
 .submit-btn{
     position: absolute;
-    top: 91vh;
-    height: 7.10vh;
+    top: 92vh;
+    height: 5.1vh;
     width: 100%;
     border: none;
     outline: none;
